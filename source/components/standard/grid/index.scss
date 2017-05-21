@@ -17,7 +17,7 @@ $l-grid_tot-columns: 16;
 
 // @import 'grid-config';
 
-$gutter: 1em;
+$gutter: 0.5em;
 
 @include l('grid', true){
 
@@ -40,7 +40,7 @@ $gutter: 1em;
 
 //Mobile First - Responsive Grid
 
-@media screen and (min-width: 500px){
+@media screen and (min-width: 610px){
   @include l('grid', true){
     @include e('row') {
       flex-direction: row;
@@ -58,10 +58,12 @@ $gutter: 1em;
 
 @include l('gridrow', false){
   @include e('gutters'){
+    margin-top: -$gutter;
     margin-left: -$gutter;
     > .#{$g-framework-name}_l-grid__col {
+      padding-top: $gutter;
       padding-left: $gutter;
-      margin-bottom: 1em;
+      margin-bottom: $gutter;
     }
   }
 }
